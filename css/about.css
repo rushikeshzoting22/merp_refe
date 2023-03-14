@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #01000f 0%, #01000f 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px;
+}
+
+body::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FF7518,#ff74187c);
+    clip-path: circle(30% at right 70%);
+    z-index: 0;
+}
+body::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FF7518,#6E0607);
+    clip-path: circle(20% at 10% 10%);
+    z-index: 0;
+}
+
+section{
+    position: relative;
+    display: flex;
+    top: 30px;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 5px);
+    min-width: calc(100vh - 280px);
+    min-height: 300px;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+    flex-wrap: wrap;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    z-index: 1;
+}
+.container
+{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+.container .card
+{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(rgba(255, 255, 255, 0.466),rgba(255, 255, 255, 0.171));
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+.container .card .content
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.2;
+    transition: 0.5s;
+}
+.container .card:hover .content
+{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+.container .card .content .imgBx
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, 0.5);
+}
+.container .card .content .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .card .content .contentBx h3
+{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+.container .card .content .contentBx h3 span
+{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: initial;
+}
+.container .card .sci2
+{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.container .card .sci2 li
+{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.1s * var(--i));
+}
+.container .card:hover .sci2 li
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.container .card .sci2 li a
+{
+    color: #fff;
+    font-size: 24px;
+}
+
+
+header
+{
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    left: 20px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+}
+
+header .logo{
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2.5em;
+}
+header ul{
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+    margin: 0 10px;
+}
+header ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 25px;
+}
+header ul li a:hover,
+header ul li a.active
+{
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+}
+
+
+.sci{
+    position: absolute;
+    right: -25px;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+.sci li a
+{
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin: 5px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.sci li a img
+{
+    transform: scale(0.6);
+    transition: 0.5s;
+}
+.sci li:hover a img
+{
+    transform: scale(0.6) rotate(360deg);
+}
+.copyrightText
+{
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    color: #000000;
+}

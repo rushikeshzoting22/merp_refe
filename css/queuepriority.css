@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(hostingbg.jpg);
+    background-size: cover;
+} */
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #01000f 0%, #01000f 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px;
+}
+
+body::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FF7518,#ff74187c);
+    clip-path: circle(30% at right 70%);
+    z-index: 0;
+}
+body::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FF7518,#6E0607);
+    clip-path: circle(20% at 10% 10%);
+    z-index: 0;
+}
+section
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 5px);
+    min-width: calc(100vh - 280px);
+    min-height: 400px;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+    flex-wrap: wrap;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    z-index: 1;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 54px 0;
+}
+
+.container .box
+{
+    position: relative;
+    left: 100px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 30px;
+    transition: 0.5s;
+}
+
+.container .box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+.container .box::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+    transform: skewX(0deg);
+    width: 70%;
+    left: 20px;
+    width: calc(100% -90px);
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after
+{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #979797), color-stop(100%, #D6D5D3));
+    border: 1px solid #C7C6C4;
+    box-shadow: inset 0 1px 0 #F4F3F1;
+    -webkit-box-shadow: inset 0 1px 0 #F4F3F1;
+    -moz-box-shadow: inset 0 1px 0 #F4F3F1;
+}
+
+.container .box:nth-child(4):before,
+.container .box:nth-child(4):after
+{
+    background: radial-gradient(ellipse farthest-corner at right bottom, #37d0fe 0%, #31e5fd 8%, #28919f 30%, #2f848a 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #aceeff 8%, #64cdd1 25%, #1f595d 62.5%, #1f5d5a 100%);
+}
+
+.container .box span
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.container .box span::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.container .box:hover span::before
+{
+    top: -50px;
+    left: 7px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+.container .box span::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    animation-delay: -1s;
+}
+
+.container .box:hover span::after
+{
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+@keyframes animate
+{
+    0%,100%
+    {
+        transform: translateY(10px);
+    }
+    50%
+    {
+        transform: translateY(-10px);
+    }
+}
+
+.container .box .content
+{
+    position: relative;
+    left: 0;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.container .box:hover .content
+{
+    left: -25px;
+    padding: 60px 40px;
+}
+
+.container .box .content h2
+{
+    font-size: 2em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.container .box .content p
+{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.container .box .content a
+{
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+
+header
+{
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    left: 20px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+}
+
+header .logo{
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2.5em;
+}
+header ul{
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+    margin: 0 10px;
+}
+header ul li a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 25px;
+}
+header ul li a:hover,
+header ul li a.active
+{
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    border-top: 2px solid rgba(253, 251, 251, 0.788);
+    border-left: 2px solid rgba(253, 251, 251, 0.788);
+}
+
+
+.sci{
+    position: absolute;
+    right: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li{
+    list-style: none;
+}
+.sci li a
+{
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right, #ffffff7c 0%, #fafbfc31 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin: 5px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.sci li a img
+{
+    transform: scale(0.6);
+    transition: 0.5s;
+}
+.sci li:hover a img
+{
+    transform: scale(0.6) rotate(360deg);
+}
+.copyrightText
+{
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    color: #000000;
+}
